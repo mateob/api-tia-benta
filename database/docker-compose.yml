@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  postgres-compose:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "8C$UNz@UGAT29ob@y58DBudm!&ug"
+    ports:
+      - "5432:5432"
+    volumes:
+      - /home/mateo/Projetos/Docker-Compose/PostgreSQL:/var/lib/postgresql/data 
+    networks:
+      - postgres-compose-network
+      
+  pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@admin.com.br"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports:
+      - "6543:80"
+    depends_on:
+      - postgres-compose
+    networks:
+      - postgres-compose-network
+
+networks: 
+  postgres-compose-network:
+    driver: bridge
