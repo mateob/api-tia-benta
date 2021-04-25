@@ -1,4 +1,4 @@
-import "./utils/module-alias";
+import "./util/module-alias";
 import { Server } from "@overnightjs/core";
 import { Application } from "express";
 import bodyParser from "body-parser";
@@ -9,8 +9,10 @@ import { OpenApiValidator } from "express-openapi-validator";
 import { OpenAPIV3 } from "express-openapi-validator/dist/framework/types";
 import * as database from "@src/database";
 import apiSchema from "./api-schema.json";
-import { apiErrorValidator } from "./middlewares/api-error-validator";
+
 import logger from "./logger";
+import { apiErrorValidator } from "./middleware/api-error-validator";
+import { listOfControllers } from "./controller/list-of-controllers";
 
 export class SetupServer extends Server {
   constructor(private port = 3000) {
@@ -40,8 +42,7 @@ export class SetupServer extends Server {
   }
 
   private setupControllers(): void {
-    // const usersController = new UsersController();
-    this.addControllers([]);
+    this.addControllers(listOfControllers);
   }
 
   private async docsSetup(): Promise<void> {
@@ -67,7 +68,7 @@ export class SetupServer extends Server {
 
   public start(): void {
     this.app.listen(this.port, () => {
-      logger.info("Server listening of port:", this.port);
+      logger.info(`Server listening of port: ${this.port}.`);
     });
   }
 }

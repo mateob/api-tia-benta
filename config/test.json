@@ -1,0 +1,10 @@
+{
+    "App":  {
+        "database": {
+            "mongoUrl": "mongodb://172.17.0.4:27017/visu-db-test"
+        },
+        "logger": {
+            "enabled": false
+        }
+    }
+}

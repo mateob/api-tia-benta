@@ -7,7 +7,7 @@ import { BaseController } from "./base/base";
 import { ControllerEntity } from "./base/controller.enum";
 
 @Controller(ControllerEntity.USER)
-export class UsersController extends BaseController<UserModel> {
+export class UserController extends BaseController<UserModel> {
   constructor() {
     super(ControllerEntity.USER, schema);
   }

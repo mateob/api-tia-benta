@@ -1,0 +1,16 @@
+{
+    "App":  {
+        "port": 3050,
+        "database": {
+            "mongoUrl": "mongodb://172.17.0.3:27017/tia-benta-db"
+        },
+        "auth": {
+            "key": "some-key",
+            "tokenExpiresIn": "100000"
+        },
+        "logger": {
+            "enabled": true,
+            "level": "info"
+        }
+    }
+}

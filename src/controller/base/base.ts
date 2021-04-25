@@ -3,7 +3,6 @@ import { CUSTOM_VALIDATION } from "@src/model/user";
 import ApiError, { APIError } from "@src/util/errors/api-error";
 import { uppercaseWords } from "@src/util/stringUtils";
 import mongoose, { Document, Model, Schema } from "mongoose";
-
 import { Request, Response } from "express";
 import { ControllerEntity } from "./controller.enum";
 
