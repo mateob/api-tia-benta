@@ -2,7 +2,7 @@ export enum ControllerEntity {
   CATEGORY = "category",
   CARTE = "carte",
   CUSTOMER = "customer",
-  USER = "users",
+  USER = "user",
   RECIPE = "recipe",
   CONFIG = "config",
   USER_GROUP = "userGroup",
